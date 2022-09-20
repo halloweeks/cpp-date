@@ -18,9 +18,9 @@ int main() {
 <H4>Output</H4>
 
 <Code>
-root@localhost:~# $HOME/date
-Current date: 2022-09-20
-Current date + 1day: 2022-09-21
-Current date - 1day: 2022-09-19
+root@localhost:~# $HOME/date</br>
+Current date: 2022-09-20</br>
+Current date + 1day: 2022-09-21</br>
+Current date - 1day: 2022-09-19</br>
 root@localhost:~#
 </Code>

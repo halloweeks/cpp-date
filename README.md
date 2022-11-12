@@ -17,10 +17,10 @@ int main() {
 
 <H4>Output</H4>
 
-<Code>
+```
 root@localhost:~# ./date  
 Current date: 2022-09-20  
 Current date + 1day: 2022-09-21  
 Current date - 1day: 2022-09-19  
 root@localhost:~#
-</Code>
+```

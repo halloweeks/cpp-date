@@ -19,6 +19,12 @@ int main() {
 g++ date.cpp -o date
 ```
 
+<h4>Run</h4>
+
+```
+./date
+```
+
 <H4>Output</H4>
 
 ```

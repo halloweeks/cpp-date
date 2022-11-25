@@ -1,6 +1,4 @@
-# cpp-date
-
-<p>Example</p>
+<h4>Example</h4>
 
 ```
 #include <iostream>

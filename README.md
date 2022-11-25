@@ -13,6 +13,12 @@ int main() {
 
 ```
 
+<h4>Compile</h4>
+
+```
+g++ date.cpp -o date
+```
+
 <H4>Output</H4>
 
 ```

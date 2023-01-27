@@ -9,7 +9,7 @@ Create ``main.cpp`` file
 #include <time.h>
 
 time_t time() {
-	long int epoch = 0;
+	time_t epoch = 0;
 	time(&epoch);
 	return epoch;
 }

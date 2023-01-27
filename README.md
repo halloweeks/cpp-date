@@ -1,14 +1,35 @@
 <h4>Example</h4>
 
+Create ``main.cpp`` file
+
+
+
 ```
 #include <iostream>
-#include "date.hpp"
+#include <time.h>
+
+time_t time() {
+	long int epoch = 0;
+	time(&epoch);
+	return epoch;
+}
+
+char *date(const char *format, long int epoch) {//const char *format = "%Y-%m-%d", long long add_second = 0) {
+	time_t rawtime = epoch;
+	tm* timeinfo;
+	static char buffer [80];
+	// time(&rawtime);
+	// rawtime = rawtime + add_second;
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, 80, format, timeinfo);
+	return buffer;
+}
 
 int main() {
-  std::cout << "Current date: " << date("%Y-%m-%d %H:%M:%S") << "\n";
-  std::cout << "Current date plus 1 day: " << date("%Y-%m-%d %H:%M:%S", 86400) << "\n";
-  std::cout << "Current date minus 1 day: " << date("%Y-%m-%d %H:%M:%S", -86400) << "\n";
-  return 0;
+	time_t epoch = time();
+	std::cout << "Unix Epoch: " << epoch << "\n";
+	std::cout << "Date: " << date("%Y-%m-%d %H:%M:%S", epoch) << "\n";
+	return 0;
 }
 
 ```
@@ -16,21 +37,20 @@ int main() {
 <h4>Compile</h4>
 
 ```
-g++ date.cpp -o date
+g++ main.cpp -o main
 ```
 
 <h4>Run</h4>
 
 ```
-./date
+./main
 ```
 
 <H4>Output</H4>
 
 ```
-root@localhost:~# ./date  
-Current date: 2022-09-20  
-Current date plus 1 day: 2022-09-21  
-Current date minus 1 day: 2022-09-19  
+root@localhost:~# ./main
+Unix Epoch: 1674843662
+Date: 2023-01-27 23:51:02
 root@localhost:~#
 ```

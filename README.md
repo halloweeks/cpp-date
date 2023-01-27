@@ -4,7 +4,7 @@ Create ``main.cpp`` file
 
 
 
-```
+```cpp
 #include <iostream>
 #include <time.h>
 

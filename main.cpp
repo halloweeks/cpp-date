@@ -2,17 +2,15 @@
 #include <time.h>
 
 time_t time() {
-	long int epoch = 0;
+	time_t epoch = 0;
 	time(&epoch);
 	return epoch;
 }
 
-char *date(const char *format, long int epoch) {//const char *format = "%Y-%m-%d", long long add_second = 0) {
+char *date(const char *format, time_t epoch) {
 	time_t rawtime = epoch;
 	tm* timeinfo;
 	static char buffer [80];
-	// time(&rawtime);
-	// rawtime = rawtime + add_second;
 	timeinfo = localtime(&rawtime);
 	strftime(buffer, 80, format, timeinfo);
 	return buffer;
